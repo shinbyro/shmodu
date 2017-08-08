@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>SENDEX 2017</title>
+	<link href="css/style.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=ko"></script>
+	<script src="js/swiper.min.js"></script> 
+	<script type="text/javascript">
+		function initialize() {
+			var mapLocation = new google.maps.LatLng('37.669104', '126.745706'); // 지도에서 가운데로 위치할 위도와 경도
+			var markLocation = new google.maps.LatLng('37.669104', '126.745706'); // 마커가 위치할 위도와 경도
+			
+			var mapOptions = {
+				center: mapLocation, // 지도에서 가운데로 위치할 위도와 경도(변수)
+				zoom: 15, // 지도 zoom단계
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("map-canvas"), // id: map-canvas, body에 있는 div태그의 id와 같아야 함
+			mapOptions);
+
+			var size_x = 60; // 마커로 사용할 이미지의 가로 크기
+			var size_y = 60; // 마커로 사용할 이미지의 세로 크기
+
+			// 마커로 사용할 이미지 주소
+			var image = new google.maps.MarkerImage( 'http://www.larva.re.kr/home/img/boximage3.png',
+						new google.maps.Size(size_x, size_y),
+						'',
+						'',
+						new google.maps.Size(size_x, size_y));
+
+			var marker;
+			marker = new google.maps.Marker({
+			   position: markLocation, // 마커가 위치할 위도와 경도(변수)
+			   map: map,
+			   icon: image, // 마커로 사용할 이미지(변수)
+			//  info: '말풍선 안에 들어갈 내용',
+			   title: 'KINTEX' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+			});
+
+			var content = "KINTEX"; // 말풍선 안에 들어갈 내용
+
+			// 마커를 클릭했을 때의 이벤트. 말풍선 뿅~
+			var infowindow = new google.maps.InfoWindow({ content: content});
+
+			google.maps.event.addListener(marker, "click", function() {
+				infowindow.open(map,marker);
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+	<script>
+		function go_motion(go_num) {
+			height1=$("#"+go_num).offset().top;
+			$("html, body").stop().animate({scrollTop : height1}, 1000);
+		}
+		$(window).scroll(function() {
+			//console.log($(window).scrollTop()+' / '+$(window).height());
+			if ($(window).scrollTop() <  $(window).height()) {
+				$("#btn_top").hide();
+			}else{
+				$("#btn_top").show();
+			}
+		})		
+	</script>
+	<script type="text/javascript">
+		//모바일 브라우저 인식
+		var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
+		for (var word in mobileKeyWords){
+		  if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+			//top.location.replace("/type_d/0001/m/");
+			break;
+		  }
+		}
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="contents">
+		<!-- Header -->
+		<!-- fixed button -->
+		<div id="sns">
+			<ul>
+				<li><a href="https://www.facebook.com/sendexkr"></a></li>
+				<li><a href="https://www.instagram.com/sendex_expo/"></a></li>
+				<li><a href="http://blog.naver.com/sendex"></a></li>
+			</ul>
+		</div>
+		<a id="btn_top" href="javascript:void(0);" onclick="javascript:go_motion('top');">top</a>
+		<!-- top -->
+		<div id="top" class="top" style="height:1000px">
+			<img src="img/img6.jpg">
+			<div id="txt_box" style="width:100%;color:#f1f1f1">
+				<div id="text1">SENDEX <span style="font-size:38px;margin-top:-3px"><span style="color:#f3257a">2</span><span style="color:#f9ae3b">0</span><span style="color:#22abe2">1</span><span style="color:#95c361">7</span></span></div>
+				<p style="padding: 20px 0 10px;font-size:30px;padding-left:42px ">KINTEX 제1전시장 2.3홀</p>
+				<p style="font-size:30px;padding-left:42px">2017.<span style="margin-top:-22px">11.09</span> thu&nbsp;-&nbsp;<span style="margin-top:-22px">11.11</span> sat</p>
+				<ul>
+					<li><a href="javascript:void(0);" onclick="javascript:go_motion('sendex_info');">SENDEX 2017</a></li>
+					<li><a href="javascript:void(0);" onclick="javascript:go_motion('visit');">참관안내</a></li>
+					<!--<li><a href="javascript:void(0);" onclick="javascript:go_motion('participation');">참가안내</a></li>-->
+					<li><a href="javascript:void(0);" onclick="javascript:go_motion('map');">전시장안내</a></li>
+				</ul>
+			</div>
+			<div id="video"><iframe width="500" height="332" src="https://www.youtube.com/embed/jExW3r7oBv0" frameborder="0" allowfullscreen></iframe></div>
+			<div class="bk_opc"style="background:#222;opacity:0.7">cover</div>
+		</div>
+		<!-- SENDEX 2017 -->
+		<div id="sendex_info" class="conts_wrap" style="padding:100px 0">
+			<p class="title1">Why SENDEX?<em>―</em></p>
+			<p class="sub_title1"><span>13회째</span>를 맞이한 국내에서 가장 오랜 역사를 가진 <span>시니어 리빙&복지 전문전시회!</span></p>
+			<div id="img1"><img src="img/dt2.jpg"></div>
+			<div id="img2"><div><img src="img/dt.jpg"></div></div>
+			<ul class="list" style="margin-top:60px">
+				<li>
+					<p class="sub_title2" style="margin-bottom:0">현재 대한민국은?</p><img src="img/graph01.jpg">
+				</li>
+				<li>
+					<p class="sub_title2" style="margin-bottom:0">고령친화산업 시장은?</p><img src="img/graph02.jpg">
+				</li>
+			</ul>
+			<ul class="list_h" style="margin-top:20px;">
+				<li>
+					<div class="b_box">
+						<p class="sub_title2" style="padding-left:30px !important;background-position:15px">주요참관객</p>
+						<div class="info_txt"><span>베이비 부머는 슈퍼소비자!</span>대한민국 50대 이상 인구는 총 인구의 1/3!<br>다양한 산업군에 관심을 두고 있으며 대한민국의 전체 자산 61%를 보유하고 있어, 가장 소비활동이 활발한 세대입니다.</div>
+					</div>
+				</li>
+				<li>
+					<div class="b_box">
+						<p class="sub_title2" style="padding-left:30px !important;background-position:15px">주요바이어</p>
+						<div class="info_txt"><span>복지·의료시설 및 공공기관 종사자</span>B2B 복지 사업은 복지·의료시설과 공공기관이 정부의 지원을 받아 구매하게 됩니다.</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 전시품목 -->
+		<div id="sendex_items" class="con_01">
+			<div class="title2" style="">SENDEX 2017 전시품목<em>―</em></div>
+			<ul class="list_ov">
+				<li style="position:relative">
+					<div id="evt_1">
+						<img src="img/img3.jpg"><p><span>리빙&라이프 스타일</span></p>
+						<div class="detail_items">
+							<span>리빙&라이프 스타일</span>
+							<span>리빙용품<br>주거<br>의류<br>여행·취미·여가<br>노후생활</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div id="evt_2">
+						<img src="img/rawpixel-com-268376.jpg"><p><span>생애설계</span></p>
+						<div class="detail_items">
+							<span>생애설계</span>
+							<span>금융·재무설계<br>맞춤형 노후설계<br>금융상품</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div id="evt_3">
+						<img src="img/pexels-photo-220723.jpg"><p><span>헬스케어&뷰티</span></p>
+						<div class="detail_items">
+							<span>헬스케어&뷰티</span>
+							<span>건강보조기구<br>의료기기<br>의약품<br>건강식품<br>뷰티용품</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<ul class="list_ov" style="width:510px;margin:0 auto">
+				<li>
+					<div id="evt_4">
+						<img src="img/hospital-1822460_1920.jpg"><p><span>고령친화용품&요양</span></p>
+						<div class="detail_items">
+							<span>고령친화용품&요양</span>
+							<span>고령친화제품<br>정보기기<br>요양산업</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div id="evt_5">
+						<img src="img/img3.jpg"><p><span>보조공학&재활</span></p>
+						<div class="detail_items">
+							<span>보조공학&재활</span>
+							<span>보조공학기기<br>복지용구<br>재활기기<br>물리치료<br>운동처방</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<!--<a href="javascript:void(0);" onclick="javascript:go_motion('consult');">박람회 참가신청</a>-->
+		</div>
+		<!-- 참관안내 -->
+		<div id="visit" class="conts_wrap" style="padding:100px 0">
+			<p class="title1">참관안내<em>―</em></p>
+			<p class="sub_title2" style="padding:4px 0 8px">참관안내</p>
+			<table class="table tbl1">
+				<tr>
+					<td>전시기간</td>
+					<td>2017년 11월 9일(목) ~ 11월 11일(토)</td>
+				</tr>
+				<tr>
+					<td>관람시간</td>
+					<td>10:00 ~ 18:00</td>
+				</tr>
+				<tr>
+					<td>장소</td>
+					<td>킨텍스 제 1전시장 2,3홀</td>
+				</tr>
+				<tr>
+					<td>입장료</td>
+					<td>5,000</td>
+				</tr>
+				<tr>
+					<td>무료입장 안내</td>
+					<td>- 온라인 사전등록자<br>- 65세 이상 경로자<br>- 고양시민<br>- 국가유공자, 장애인<br>- 사전단체관람 신청자<br>- 무료초대권 소지자</td>
+				</tr>
+			</table>
+			<p class="sub_title2" style="padding:4px 0 8px">입장절차</p>
+			<div id="stance">
+				<ul>
+					<li>
+						<div class="list_box box1">
+							<span class="stance_title">초청장 지참자</span>
+							<div class="img_box">
+								<img src="img/visit1.jpg">
+								<span style="left:15px">01. 등록카드 작성</span>
+								<span style="left:245px">02. 본인확인 및 출입증 수령</span>
+								<span style="left:550px">03. 전시회 관람</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_box">
+							<span class="stance_title">사전 등록자</span>
+							<div class="img_box">
+								<img src="img/visit2.jpg">
+								<span style="left:12px">01. 현장 본인 확인</span>
+								<span style="left:288px">02. 출입증 수령</span>
+								<span style="left:575px">03. 입장</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_box">
+							<span class="stance_title">일반 관람객</span>
+							<div class="img_box">
+								<img src="img/visit3.jpg">
+								<span style="left:7px">01. 입장권 구매</span>
+								<span style="left:188px">02. 등록카드 작성</span>
+								<span style="left:384px">03. 출입증 수령</span>
+								<span style="left:594px">04. 입장</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<a id="btn_visit" href="http://sendex.co.kr/visit/02.php">사전등록 바로가기</a>
+		</div>
+		<!-- 참가안내 -->
+		<!--<div id="participation" style="width:1000px;margin:0 auto;padding:100px 0">
+			<p style="font-weight:bold;color:#e7297b">부스유형 및 참가비 단가</p>
+			<table class="table tbl2">
+				<tr>
+					<td>독립부스</td>
+					<td>조립부스</td>
+					<td>프리미엄부스</td>
+				</tr>
+				<tr>
+					<td><img src="img/booth01.gif"></td>
+					<td><img src="img/booth02.gif"></td>
+					<td><img src="img/booth03.gif"></td>
+				</tr>
+				<tr>
+					<td>
+						<p>1,700,000원/1부스</p>
+						<span>- 면적만 제공 (1부스:3m*3m)<br>- 참가업체가 킨텍스 등록업체를 개별 선정하여 직접 시공 설치<br>- 2부스 이상 신청 시 가능</span>
+					</td>
+					<td>
+						<p>2,000,000원/1부스</p>
+						<span>- 기본부스, 회사상호간판, 간판조명, 바닥 파이텍스<br>- 안내데스크 1개, 테이블 1개, 의자3개, 휴지통 1개<br>- 전기 1kw(콘센트220V)</span>
+					</td>
+					<td>
+						<p>2,300,000원/1부스</p>
+						<span>- 기본부스, LED간판, 간판조명, 바닥 파이텍스<br>- 안내데스크 1개, 테이블 1개, 의자 3개, 휴지통 1개<br>- 전기 1kw(콘센트220V)<br>- 브로셔 거치대 1조</span>
+					</td>
+				</tr>
+			</table>
+			<p style="margin-bottom:20px;font-weight:bold;color:#e7297b">신청절차</p>
+			<div style="border:rgb(235, 235, 235)">
+				<ul style="">
+					<li style="overflow:hidden;border:1px solid rgb(235, 235, 235);padding:20px;margin-bottom:12px;box-shadow:rgba(0, 0, 0, 0.36) 3px 3px 3px 0px"><img src="img/1.jpg" style="float:right">
+					</li>
+				</ul>
+			</div>
+			<p style="font-weight:bold;margin-top:40px;color:#e7297b">할인 정책/부스당 할인 적용</p>
+			<table class="table tbl2" style="text-align:center"> 
+				<tr>
+					<td>항목</td>
+					<td>대상</td>
+					<td>할인내역</td>
+				</tr>
+				<tr>
+					<td>조기할인</td>
+					<td>2017. 6. 30(금)까지<br>조기신청사</td>
+					<td>부스비 50만원 할인</td>
+				</tr>
+				<tr>
+					<td>재참가사</td>
+					<td>SENDEX박람회<br>재참가업체</td>
+					<td>부스비 10만원 할인</td>
+				</tr>
+				<tr>
+					<td>사회적 기업</td>
+					<td>사회적기업<br>(중복할인가능, 증빙서류제출시)</td>
+					<td>부스비 10만원 할인</td>
+				</tr>
+			</table>
+			<p style="margin-bottom:20px;font-weight:bold;color:#e7297b">부스배정 원칙</p>
+			<div style="border:rgb(235, 235, 235)">
+				<ul style="">
+					<li style="overflow:hidden;border:1px solid rgb(235, 235, 235);padding:20px;margin-bottom:12px;box-shadow:rgba(0, 0, 0, 0.36) 3px 3px 3px 0px"><img src="img/1.jpg" style="float:right">
+					</li>
+				</ul>
+			</div>
+			<a href="http://sendex.co.kr/enter/02.php" style="width:300px;height:80px;display:block;margin:60px auto 0;line-height:80px;background:#2a2a2a;color:#fff;border-radius:8px;overflow:hidden;text-align:center">참가신청 바로가기</a>
+		</div>-->
+		
+		<!-- 둘러보기 -->
+		<div id="photo" class="conts_wrap" style="background:#b7c370;padding:80px 0">
+			<div class="title2">SENDEX 둘러보기<em>―</em></div>
+			<div style="margin-top:40px;padding:0 60px">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/1.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/2.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/3.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/4.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/5.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/6.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/7.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/8.jpg"></div></div>
+						<div class="swiper-slide"><div class="swiper-img"><img src="img/9.jpg"></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 지도 -->
+		<div class="conts_wrap" style="padding:100px 0 120px">
+			<div class="title1">전시장 안내<em>―</em></div>
+			<div id="map">
+				<div id="map-canvas" style="z-index:5"></div>
+				<div id="map_info">
+					<table class="table tbl3">
+						<tr>
+							<td>주최·주관</td>
+							<td>KINTEX<br>SENDEX 2017 사무국</td>
+						</tr>
+						<tr>
+							<td>장소</td>
+							<td>경기도 고양시 일산서구 킨텍스로 217-60 (대화동, 킨텍스)</td>
+						</tr>
+						<tr>
+							<td>TEL</td>
+							<td>031.995.8048/8741</td>
+						</tr>
+						<tr>
+							<td>FAX</td>
+							<td>031.995.8779</td>
+						</tr>
+						<tr>
+							<td>MAIL</td>
+							<td>sendex@kintex.com</td>
+						</tr>
+					</table>
+					<a id="btn_trans" href="http://sendex.co.kr/exhibition/01.php">교통안내 바로가기</a>
+				</div>
+			</div>
+		</div>
+		<!-- Footer -->
+		<div id="footer">
+			<div class="footer_wrap">
+				<p class="f_title">SENDEX 2017</p>
+				<div class="inner_info">
+					<ul>
+						<li>주최·주관 KINTEX·SENDEX 2017 사무국 | TEL 031.995.8048/8741 | FAX 031.995.8779 | MAIL sendex@kintex.com</li>
+						<li>경기도 고양시 일산서구 킨텍스로 217-60 (대화동,킨텍스)</li>
+						<li class="copyright">Copyright ⓒ 하나웨딩박람회 All Rights Reserved </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		//전시품목
+		$(document).ready(function(e) {
+			$('.list_ov li div').on('mouseenter', function() {
+				$(this).children('div').css("display","block");
+				$(this).children('p').css("display","none");
+			}).on('mouseleave', function(){
+				$(this).children('div').css("display","none");
+				$(this).children('p').css("display","block");
+			});
+		});
+		//둘러보기 slider
+		var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 3,
+			paginationClickable: true,
+			spaceBetween: 30,
+			freeMode: true
+		});
+	</script>
+	</body>
+</html>
