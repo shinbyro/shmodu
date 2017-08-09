@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<title>SENDEX 201777</title>
+	<title>SENDEX 2017</title>
 	<link href="css/style.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -43,7 +43,6 @@
 
 			var content = "KINTEX"; // 말풍선 안에 들어갈 내용
 
-			// 마커를 클릭했을 때의 이벤트. 말풍선 뿅~
 			var infowindow = new google.maps.InfoWindow({ content: content});
 
 			google.maps.event.addListener(marker, "click", function() {
@@ -104,7 +103,13 @@
 					<li><a href="javascript:void(0);" onclick="javascript:go_motion('map');">전시장안내</a></li>
 				</ul>
 			</div>
-			<div id="video"><iframe width="500" height="332" src="https://www.youtube.com/embed/jExW3r7oBv0" frameborder="0" allowfullscreen></iframe></div>
+			
+			<div id="video">
+				<div style="position:relative">
+					<iframe width="500" height="332" src="https://www.youtube.com/embed/jExW3r7oBv0" frameborder="0" allowfullscreen></iframe>
+					<div class="play-button"><div></div></div>
+				</div>
+			</div>
 			<div class="bk_opc"style="background:#222;opacity:0.7">cover</div>
 		</div>
 		<!-- SENDEX 2017 -->
