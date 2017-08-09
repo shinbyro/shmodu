@@ -168,7 +168,7 @@
 			}	
 		</script>
 		<!-- SENDEX 2017 -->
-		<div id="sendex_info" class="conts_wrap" style="padding:100px 0">
+		<div id="sendex_info" class="conts_wrap_txt">
 			<p class="title1">Why SENDEX?<em>―</em></p>
 			<p class="sub_title1"><span>13회째</span>를 맞이한 국내에서 가장 오랜 역사를 가진 <span>시니어 리빙&복지 전문전시회!</span></p>
 			<div id="img1"><img src="img/dt2.jpg"></div>
@@ -197,7 +197,7 @@
 			</ul>
 		</div>
 		<!-- 전시품목 -->
-		<div id="sendex_items" class="con_01">
+		<div id="sendex_items" class="conts_wrap_photo">
 			<div class="title2" style="">SENDEX 2017 전시품목<em>―</em></div>
 			<ul class="list_ov">
 				<li style="position:relative">
@@ -227,8 +227,6 @@
 						</div>
 					</div>
 				</li>
-			</ul>
-			<ul class="list_ov" style="width:510px;margin:0 auto">
 				<li>
 					<div id="evt_4">
 						<img src="img/hospital-1822460_1920.jpg"><p><span>고령친화용품&요양</span></p>
@@ -247,11 +245,10 @@
 						</div>
 					</div>
 				</li>
-			</ul>
 			<!--<a href="javascript:void(0);" onclick="javascript:go_motion('consult');">박람회 참가신청</a>-->
 		</div>
 		<!-- 참관안내 -->
-		<div id="visit" class="conts_wrap" style="padding:100px 0">
+		<div id="visit" class="conts_wrap_txt">
 			<p class="title1">참관안내<em>―</em></p>
 			<p class="sub_title2" style="padding:4px 0 8px">참관안내</p>
 			<table class="table tbl1">
@@ -276,8 +273,9 @@
 					<td>- 온라인 사전등록자<br>- 65세 이상 경로자<br>- 고양시민<br>- 국가유공자, 장애인<br>- 사전단체관람 신청자<br>- 무료초대권 소지자</td>
 				</tr>
 			</table>
-			<p class="sub_title2" style="padding:4px 0 8px">입장절차</p>
 			<div id="stance">
+				<p class="sub_title2" style="padding:4px 0 8px">입장절차</p>
+				<span id="detail_txt"><span>* SENDEX 본 홈페이지에서 관람객 사전등록을 받고 있습니다.</span><br>사전등록을 하시면 현장에서의 별도 등록 잘차가 없어 혼잡함을 피할 수 있습니다.<br>자세한 사항은 아래의 [사전등록 바로가기]를 통해 참고하시기 바랍니다.</span>
 				<ul>
 					<li>
 						<div class="list_box box1">
@@ -387,37 +385,74 @@
 		</div>-->
 		
 		<!-- 둘러보기 -->
-		<div id="photo" class="conts_wrap" style="background:#b7c370;padding:80px 0">
+		<style>
+			.swiper-slide div {box-shadow:rgba(0, 0, 0, 0.21) 2px 1px 3px 0px;width:330px !important;border:3px solid #eee;height: 240px;margin:0 15px 3px 0!important;}
+			.swiper-slide div:last-child {margin-right:0}
+			.swiper-slide img {width:100%;height:100%;vertical-align:top}
+		</style>
+		<div id="photo" class="conts_wrap_photo">
 			<div class="title2">SENDEX 둘러보기<em>―</em></div>
-			<div style="margin-top:40px;padding:0 60px">
+			<div id="photo_box">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/1.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/2.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/3.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/4.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/5.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/6.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/7.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/8.jpg"></div></div>
-						<div class="swiper-slide"><div class="swiper-img"><img src="img/9.jpg"></div></div>
+						<div class="swiper-slide">
+							<div><img src="img/0.jpg"></div>
+							<div><img src="img/1.jpg"></div>
+							<div><img src="img/2.jpg"></div>
+							<div><img src="img/3.jpg"></div>
+						</div>
+						<div class="swiper-slide">
+							<div><img src="img/4.jpg"></div>
+							<div><img src="img/5.jpg"></div>
+							<div><img src="img/6.jpg"></div>
+							<div><img src="img/7.jpg"></div>
+						</div>
+						<div class="swiper-slide">
+							<div><img src="img/8.jpg"></div>
+							<div><img src="img/9.jpg"></div>
+							<div><img src="img/10.jpg"></div>
+							<div><img src="img/11.jpg"></div>
+						</div>	
+						<div class="swiper-slide">
+							<div><img src="img/12.jpg"></div>
+							<div><img src="img/13.jpg"></div>
+							<div><img src="img/14.jpg"></div>
+							<div><img src="img/15.jpg"></div>
+						</div>
+						<div class="swiper-slide">
+							<div><img src="img/16.jpg"></div>
+							<div><img src="img/17.jpg"></div>
+							<div><img src="img/18.jpg"></div>
+							<div><img src="img/19.jpg"></div>
+						</div>
+						<div class="swiper-slide">
+							<div><img src="img/20.jpg"></div>
+							<div><img src="img/21.jpg"></div>
+							<div><img src="img/22.jpg"></div>
+							<div><img src="img/23.jpg"></div>
+						</div>		
 					</div>
+				</div>
+				<div class="swiper-button">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
 				</div>
 			</div>
 		</div>
 		<!-- 지도 -->
-		<div class="conts_wrap" style="padding:100px 0 120px">
+		<div class="conts_wrap_txt">
 			<div class="title1">전시장 안내<em>―</em></div>
 			<div id="map">
 				<div id="map-canvas" style="z-index:5"></div>
 				<div id="map_info">
+					<!--<p class="sub_title2" style="margin-bottom:5px;padding-bottom:3px">행사문의처</p>-->
 					<table class="table tbl3">
 						<tr>
-							<td>주최·주관</td>
-							<td>KINTEX<br>SENDEX 2017 사무국</td>
+							<td>문의처</td>
+							<td>킨텍스 SENDEX 사무국</td>
 						</tr>
 						<tr>
-							<td>장소</td>
+							<td>주소</td>
 							<td>경기도 고양시 일산서구 킨텍스로 217-60 (대화동, 킨텍스)</td>
 						</tr>
 						<tr>
@@ -429,7 +464,7 @@
 							<td>031.995.8779</td>
 						</tr>
 						<tr>
-							<td>MAIL</td>
+							<td>E-mail</td>
 							<td>sendex@kintex.com</td>
 						</tr>
 					</table>
@@ -443,9 +478,9 @@
 				<p class="f_title">SENDEX 2017</p>
 				<div class="inner_info">
 					<ul>
-						<li>주최·주관 KINTEX·SENDEX 2017 사무국 | TEL 031.995.8048/8741 | FAX 031.995.8779 | MAIL sendex@kintex.com</li>
+						<li>주최 · 주관 KINTEX · SENDEX 2017 사무국 | TEL 031.995.8048/8741 | FAX 031.995.8779 | MAIL sendex@kintex.com</li>
 						<li>경기도 고양시 일산서구 킨텍스로 217-60 (대화동,킨텍스)</li>
-						<li class="copyright">Copyright ⓒ 하나웨딩박람회 All Rights Reserved </li>
+						<li class="copyright">Copyright (C) SENDEX 2017. All RIGHTS RESERVED. Produced by webvista </li>
 					</ul>
 				</div>
 			</div>
@@ -464,12 +499,13 @@
 		});
 		//둘러보기 slider
 		var swiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			slidesPerView: 3,
-			paginationClickable: true,
-			spaceBetween: 30,
-			freeMode: true
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev'
 		});
+		//slider 가로 값 지정
+		var swiper_width = $(".swiper-slide").width();
+		var swiper_wrap_width = swiper_width * 6;
+		$(".swiper-wrapper").css("width",swiper_wrap_width);
 	</script>
 	</body>
 </html>
